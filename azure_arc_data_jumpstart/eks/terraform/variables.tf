@@ -48,14 +48,22 @@ variable "ACCEPT_EULA" {
   default     = "yes"
 }
 
-variable "REGISTRY_USERNAME" {
-  description = "Azure Arc Data - Private Preview Container Registry username"
+variable "DOCKER_REGISTRY" {
+  description = "Azure Arc Data Container Registry"
   type        = string
+  default     = "mcr.microsoft.com"
 }
 
-variable "REGISTRY_PASSWORD" {
-  description = "Azure Arc Data - Private Preview Container Registry password"
+variable "DOCKER_REPOSITORY" {
+  description = "Azure Arc Data Container Registry Repository"
   type        = string
+  default     = "arcdata"
+}
+
+variable "DOCKER_TAG" {
+  description = "Azure Arc Data Container Tag"
+  type        = string
+  default     = "latest"
 }
 
 variable "ARC_DC_NAME" {
@@ -79,12 +87,12 @@ variable "ARC_DC_REGION" {
 }
 
 variable "client_id" {
-  description = "Your Azure Service Principle name"
+  description = "Your Azure Service Principal name"
   type        = string
 }
 
 variable "client_secret" {
-  description = "Your Azure Service Principle password"
+  description = "Your Azure Service Principal password"
   type        = string
 }
 
